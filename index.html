@@ -206,22 +206,536 @@
             border-radius: 2px;
         }
 
-        <!--Tawk.to Script-->
-        <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/68821cb6d38bde192775b1f2/1j0u40aeo';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-        </script>
-        <!--End of Tawk.to Script-->
+        /* Product Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transition: all 0.3s ease;
+            transform: scale(0);
+        }
+
+        .category-card:hover::before {
+            transform: scale(1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #ffeaa7, #fab1a0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .product-card:hover .product-image::before {
+            left: 100%;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:nth-child(1) {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        }
+
+        .gallery-item:nth-child(2) {
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+        }
+
+        .gallery-item:nth-child(3) {
+            background: linear-gradient(45deg, #ffecd2, #fcb69f);
+        }
+
+        .gallery-item:nth-child(4) {
+            background: linear-gradient(45deg, #ff8a80, #ff80ab);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff6b6b;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b6b;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ff6b6b;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #ff6b6b;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
-    <!-- Body Content -->
-</body>
-</html>
+    <header>
+        <nav class="container">
+            <div class="logo">Bella Cosmetica</div>
+            <ul class="nav-links">
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#gallery">Галерия</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Луксозна козметика за вашата красота</h1>
+            <p>Открийте най-добрите козметични продукти от водещите световни брандове</p>
+            <a href="#catalog" class="cta-button">Разгледайте каталога</a>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <section id="catalog">
+                <h2 class="section-title">Категории продукти</h2>
+                <div class="categories">
+                    <div class="category-card">
+                        <div class="category-icon">💋</div>
+                        <h3>Грим за лице</h3>
+                        <p>Фондьоти, пудри, румена и коректори за перфектен тен</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👁️</div>
+                        <h3>Грим за очи</h3>
+                        <p>Сенки, спирали, очертатели и всичко за изразителен поглед</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">💄</div>
+                        <h3>Грим за устни</h3>
+                        <p>Червила, гланцове и балсами за съвършени устни</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🧴</div>
+                        <h3>Грижа за кожата</h3>
+                        <p>Кремове, серуми и маски за здрава и сияйна кожа</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Препоръчани продукти</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">💄</div>
+                        <div class="product-info">
+                            <h3 class="product-name">Матово червило Rouge Velvet</h3>
+                            <p class="product-price">45.90 лв.</p>
+                            <p class="product-description">Дълготрайно матово червило с наситени цветове и комфортна текстура</p>
+                            <button class="buy-button">Добави в кошницата</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">✨</div>
+                        <div class="product-info">
+                            <h3 class="product-name">Хайлайтър Glow Goddess</h3>
+                            <p class="product-price">52.90 лв.</p>
+                            <p class="product-description">Озаряващ хайлайтър за естествено сияние и изваяни черти</p>
+                            <button class="buy-button">Добави в кошницата</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">👁️</div>
+                        <div class="product-info">
+                            <h3 class="product-name">Палитра сенки Sunset Dreams</h3>
+                            <p class="product-price">78.90 лв.</p>
+                            <p class="product-description">12 прекрасни нюанса в топли тонове за всеки повод</p>
+                            <button class="buy-button">Добави в кошницата</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🧴</div>
+                        <div class="product-info">
+                            <h3 class="product-name">Витамин C серум</h3>
+                            <p class="product-price">89.90 лв.</p>
+                            <p class="product-description">Антиоксидантен серум за озаряване и защита на кожата</p>
+                            <button class="buy-button">Добави в кошницата</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">💋</div>
+                        <div class="product-info">
+                            <h3 class="product-name">Фондьо HD Perfect</h3>
+                            <p class="product-price">65.90 лв.</p>
+                            <p class="product-description">Високопокривен фондьо с естествен финиш за безупречен тен</p>
+                            <button class="buy-button">Добави в кошницата</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🌙</div>
+                        <div class="product-info">
+                            <h3 class="product-name">Нощен крем Anti-Age</h3>
+                            <p class="product-price">125.90 лв.</p>
+                            <p class="product-description">Регенериращ нощен крем срещу стареене с колаген и ретинол</p>
+                            <button class="buy-button">Добави в кошницата</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery">
+                <h2 class="section-title">Галерия</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">Луксозни продукти</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">Професионален грим</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">Естествена красота</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">Най-новите тенденции</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>За нас</h3>
+                    <p>Bella Cosmetica е водещ онлайн магазин за луксозна козметика в България. Предлагаме само най-качествените продукти от световноизвестни брандове.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>📞 +359 888 123 456</p>
+                    <p>📧 info@bellacosmetica.bg</p>
+                    <p>📍 София, ул. Витоша 15</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Полезни връзки</h3>
+                    <p><a href="#">Условия за ползване</a></p>
+                    <p><a href="#">Политика за поверителност</a></p>
+                    <p><a href="#">Доставка и връщане</a></p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" title="Facebook">📘</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="YouTube">📺</a>
+                <a href="#" title="TikTok">🎵</a>
+            </div>
+            <p>&copy; 2025 Bella Cosmetica. Всички права запазени.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const originalText = this.textContent;
+                this.innerHTML = '<span class="loading"></span> Добавя се...';
+                this.disabled = true;
+
+                setTimeout(() => {
+                    this.innerHTML = '✓ Добавено!';
+                    this.style.background = '#27ae60';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                        this.disabled = false;
+                    }, 1500);
+                }, 1000);
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Gallery item click animation
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 200);
+            });
+        });
+
+        // Category card hover effects
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) rotateX(5deg)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0deg)';
+            });
+        });
