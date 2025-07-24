@@ -4,30 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bella Cosmetica - Луксозна козметика онлайн</title>
-    <script>
-    (function() {
-      window.userbirdq = window.userbirdq || [];
-      window.USERBIRD_SITE_ID = 'fqGomITs';
-      var script = document.createElement('script');
-      script.defer = true;
-      script.setAttribute('data-site', window.USERBIRD_SITE_ID);
-      script.src = "https://cdn.userbird.com/analytics.min.js";
-      var currentScript = document.currentScript || document.getElementsByTagName('script')[0];
-      currentScript.parentNode.insertBefore(script, currentScript);
-    })();
-    </script>
-    <script>
-    (function() {
-      window.userbirdq = window.userbirdq || [];
-      window.USERBIRD_SITE_ID = 'ZkZJnBKR';
-      var script = document.createElement('script');
-      script.defer = true;
-      script.setAttribute('data-site', window.USERBIRD_SITE_ID);
-      script.src = "https://cdn.userbird.com/analytics.min.js";
-      var currentScript = document.currentScript || document.getElementsByTagName('script')[0];
-      currentScript.parentNode.insertBefore(script, currentScript);
-    })();
-    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b6b;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff6b6b;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -51,49 +136,26 @@
         </div>
     </section>
 
-    <!-- Main content... -->
+    <main>
+        <div class="container">
+            <section id="catalog">
+                <h2 class="section-title">Категории продукти</h2>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>За нас</h3>
-                    <p>Bella Cosmetica е водещ онлайн магазин за луксозна козметика в България...</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Контакти</h3>
-                    <p>📞 +359 888 123 456</p>
-                    <p>📧 info@bellacosmetica.bg</p>
-                    <p>📍 София, ул. Витоша 15</p>
+                    <p>Bella Cosmetica е водещ онлайн магазин за луксозна козметика в България.</p>
                 </div>
             </div>
-            <div class="social-links">
-                <a href="#" title="Facebook">📘</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="YouTube">📺</a>
-                <a href="#" title="TikTok">🎵</a>
-            </div>
-            <p>&copy; 2025 Bella Cosmetica. Всички права запазени.</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-
-    <!-- Chat Bot Script -->
+    <!-- Чатбот скрипт -->
     <script type="module" src="https://app-jzj8rykdy3lu.mando.bot/bot.js" defer></script>
 </body>
 </html>
