@@ -132,3 +132,123 @@
             padding: 1rem 2rem;
             background: linear-gradient(45deg, #ff6b6b, #ee5a52);
             color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            background: white;
+            border-radius: 20px 20px 0 0;
+            margin-top: 2rem;
+            padding: 3rem 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Bella Cosmetica</div>
+            <ul class="nav-links">
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#gallery">Галерия</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Луксозна козметика за вашата красота</h1>
+            <p>Открийте най-добрите козметични продукти от водещите световни брандове</p>
+            <a href="#catalog" class="cta-button">Разгледайте каталога</a>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <section id="catalog">
+                <h2 class="section-title">Категории продукти</h2>
+                <div class="categories">
+                    <div class="category-card">
+                        <div class="category-icon">💋</div>
+                        <h3>Грим за лице</h3>
+                        <p>Фондьоти, пудри, румена и коректори за перфектен тен</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👁️</div>
+                        <h3>Грим за очи</h3>
+                        <p>Сенки, спирали, очертатели и всичко за изразителен поглед</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">💄</div>
+                        <h3>Грим за устни</h3>
+                        <p>Червила, гланцове и балсами за съвършени устни</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🧴</div>
+                        <h3>Грижа за кожата</h3>
+                        <p>Кремове, серуми и маски за здрава и сияйна кожа</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>За нас</h3>
+                    <p>Bella Cosmetica е водещ онлайн магазин за луксозна козметика в България.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>📞 +359 888 123 456</p>
+                    <p>📧 info@bellacosmetica.bg</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
