@@ -63,6 +63,7 @@
             color: #333;
             font-weight: 500;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
@@ -111,6 +112,35 @@
         .footer-section p, .footer-section a {
             color: #bdc3c7;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b6b;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ff6b6b;
+            transform: translateY(-3px);
         }
     </style>
 </head>
@@ -155,7 +185,10 @@
         </div>
     </footer>
 
-    <!-- Чатбот скрипт -->
+    <!-- Chat Bot Script - Mando -->
     <script type="module" src="https://app-jzj8rykdy3lu.mando.bot/bot.js" defer></script>
+
+    <!-- Chat Bot Script - FastBots -->
+    <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cmdh3z55r03yepd1kmwlkpxyv"></script>
 </body>
 </html>
